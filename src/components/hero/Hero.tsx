@@ -13,7 +13,7 @@ interface HeroProps {
 const HERO_STATS = [
   {
     label: "Wisatawan Puas",
-    value: "3.200",
+    value: "250",
     suffix: "+ orang",
     sub: "Sejak 2019 hingga kini",
   },
@@ -25,7 +25,7 @@ const HERO_STATS = [
   },
   {
     label: "Destinasi Aktif",
-    value: "12",
+    value: "10",
     suffix: "destinasi",
     sub: "Sabang sampai Merauke",
   },
