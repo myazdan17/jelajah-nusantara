@@ -1078,7 +1078,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "g-10",
     destination: "Puncak Jaya",
-    src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80",
     alt: "Puncak gunung bersalju dengan kabut di ketinggian",
     caption: "Carstensz Pyramid",
     isDemo: true,
