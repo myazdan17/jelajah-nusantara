@@ -10,10 +10,10 @@ export const COMPANY: CompanyConfig = {
   name: "JelajahNusantara Tour & Travel",
   shortName: "JelajahNusantara",
   tagline: "Perjalanan Indonesia, Dirancang dengan Hati",
-  whatsapp: "6281234567890",
-  email: "halo@jelajahnusantara.demo",
-  address: "Jl. Contoh Demo No. 12, Jakarta Selatan, DKI Jakarta 12190 (Data Demo)",
-  operationalHours: "Senin – Sabtu, 08.00 – 20.00 WIB (Data Demo)",
+  whatsapp: "6285692208315",
+  email: "jelajahnusantara@gmail.com",
+  address: "Jl. Cemara Unggul No. 27, Jakarta Selatan, DKI Jakarta 270809",
+  operationalHours: "Senin – Sabtu, 08.00 – 20.00 WIB",
   isDemo: true,
 };
 
@@ -963,7 +963,7 @@ export const TESTIMONIALS: Testimonial[] = [
     photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
     rating: 5,
     experience:
-      "Sailing Labuan Bajo-nya luar biasa! Guide-nya ramah banget, dokumentasi keren, dan itinerary-nya pas. Nggak nyesel pilih JelajahNusantara untuk honeymoon kami. (Testimoni demo)",
+      "Sailing Labuan Bajo-nya luar biasa! Guide-nya ramah banget, dokumentasi keren, dan itinerary-nya pas. Nggak nyesel pilih JelajahNusantara untuk honeymoon kami. (Testimoni)",
     packageName: "Labuan Bajo Sailing Phinisi",
     isDemo: true,
   },
@@ -974,7 +974,7 @@ export const TESTIMONIALS: Testimonial[] = [
     photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
     rating: 5,
     experience:
-      "Open trip Bromo tengah malam? Awalnya ragu, tapi ternyata aman dan terorganisir. Jeep-nya bersih, guide-nya sabar, sunrise-nya juara! (Testimoni demo)",
+      "Open trip Bromo tengah malam? Awalnya ragu, tapi ternyata aman dan terorganisir. Jeep-nya bersih, guide-nya sabar, sunrise-nya juara! (Testimoni)",
     packageName: "Bromo Midnight Sunrise & Savana",
     isDemo: true,
   },
@@ -985,7 +985,7 @@ export const TESTIMONIALS: Testimonial[] = [
     photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
     rating: 5,
     experience:
-      "Bawa keluarga 5 orang ke Dieng, semua nyaman. Anak-anak senang, orang tua juga nggak capek. Recommended untuk family trip! (Testimoni demo)",
+      "Bawa keluarga 5 orang ke Dieng, semua nyaman. Anak-anak senang, orang tua juga nggak capek. Recommended untuk family trip! (Testimoni)",
     packageName: "Dieng Culture & Golden Sunrise",
     isDemo: true,
   },
@@ -996,7 +996,7 @@ export const TESTIMONIALS: Testimonial[] = [
     photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
     rating: 4,
     experience:
-      "Raja Ampat premium trip memang mahal, tapi worth it banget. Resort-nya bersih, chef-nya jago, dan Wayag-nya… speechless. (Testimoni demo)",
+      "Raja Ampat premium trip memang mahal, tapi worth it banget. Resort-nya bersih, chef-nya jago, dan Wayag-nya… speechless. (Testimoni)",
     packageName: "Raja Ampat Wayag Explorer",
     isDemo: true,
   },
@@ -1114,48 +1114,48 @@ export const FAQ_ITEMS: FAQItem[] = [
     id: "faq-01",
     question: "Berapa DP yang harus dibayar untuk booking paket?",
     answer:
-      "DP sebesar 30% dari total harga paket diperlukan untuk mengunci slot. Pelunasan dilakukan maksimal 7 hari sebelum keberangkatan. (Data demo)",
+      "DP sebesar 30% dari total harga paket diperlukan untuk mengunci slot. Pelunasan dilakukan maksimal 7 hari sebelum keberangkatan.",
   },
   {
     id: "faq-02",
     question: "Apakah bisa reschedule tanggal perjalanan?",
     answer:
-      "Bisa, reschedule dapat dilakukan maksimal 14 hari sebelum keberangkatan tanpa biaya tambahan, tergantung ketersediaan slot. (Data demo)",
+      "Bisa, reschedule dapat dilakukan maksimal 14 hari sebelum keberangkatan tanpa biaya tambahan, tergantung ketersediaan slot.",
   },
   {
     id: "faq-03",
     question: "Bagaimana kebijakan pembatalan (cancel)?",
     answer:
-      "Pembatalan lebih dari 30 hari sebelum keberangkatan: DP dapat dikembalikan 50%. Kurang dari 14 hari: DP tidak dapat dikembalikan. (Data demo)",
+      "Pembatalan lebih dari 30 hari sebelum keberangkatan: DP dapat dikembalikan 50%. Kurang dari 14 hari: DP tidak dapat dikembalikan.",
   },
   {
     id: "faq-04",
     question: "Apakah anak-anak boleh ikut?",
     answer:
-      "Boleh. Anak usia 3-12 tahun mendapat harga khusus. Untuk anak di bawah 3 tahun, silakan konsultasi terlebih dahulu dengan admin kami. (Data demo)",
+      "Boleh. Anak usia 3-12 tahun mendapat harga khusus. Untuk anak di bawah 3 tahun, silakan konsultasi terlebih dahulu dengan admin kami.",
   },
   {
     id: "faq-05",
     question: "Di mana meeting point-nya?",
     answer:
-      "Meeting point bervariasi tergantung paket. Umumnya di bandara kedatangan atau titik yang disepakati. Detail akan diinfokan saat konfirmasi booking. (Data demo)",
+      "Meeting point bervariasi tergantung paket. Umumnya di bandara kedatangan atau titik yang disepakati. Detail akan diinfokan saat konfirmasi booking.",
   },
   {
     id: "faq-06",
     question: "Apakah ada batasan bagasi?",
     answer:
-      "Untuk paket yang menggunakan penerbangan, batas bagasi mengikuti kebijakan maskapai. Kami sarankan membawa tas kabin 7kg dan tas bagasi 20kg. (Data demo)",
+      "Untuk paket yang menggunakan penerbangan, batas bagasi mengikuti kebijakan maskapai. Kami sarankan membawa tas kabin 7kg dan tas bagasi 20kg.",
   },
   {
     id: "faq-07",
     question: "Apakah dokumentasi sudah termasuk?",
     answer:
-      "Ya, semua paket sudah termasuk dokumentasi (foto & video) oleh tim kami. Untuk paket premium, dokumentasi drone juga tersedia. (Data demo)",
+      "Ya, semua paket sudah termasuk dokumentasi (foto & video) oleh tim kami. Untuk paket premium, dokumentasi drone juga tersedia.",
   },
   {
     id: "faq-08",
     question: "Apakah itinerary bisa berubah?",
     answer:
-      "Itinerary dapat menyesuaikan kondisi cuaca dan force majeure. Kami akan selalu mengutamakan keselamatan dan kenyamanan peserta. (Data demo)",
+      "Itinerary dapat menyesuaikan kondisi cuaca dan force majeure. Kami akan selalu mengutamakan keselamatan dan kenyamanan peserta.",
   },
 ];

@@ -70,7 +70,7 @@ export function Header() {
             </span>
             <span className="mt-1 hidden items-center gap-1 text-[10px] font-medium uppercase tracking-wider text-forest-700/70 sm:inline-flex">
               <ShieldCheck className="h-3 w-3" aria-hidden="true" />
-              Terpercaya sejak 2019 (Demo)
+              Terpercaya sejak 2025
             </span>
           </a>
 

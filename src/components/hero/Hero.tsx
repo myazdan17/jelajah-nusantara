@@ -51,12 +51,12 @@ export function Hero({
           <div className="mb-6 inline-flex flex-wrap items-center gap-2 rounded-full border border-ivory-50/20 bg-ivory-50/10 px-3 py-1.5 backdrop-blur">
             <span className="inline-flex items-center gap-1.5 text-xs font-medium text-ivory-50">
               <Star className="h-3.5 w-3.5 fill-sand-400 text-sand-400" aria-hidden="true" />
-              4.9/5 dari 3.200+ Wisatawan Puas (Demo)
+              4.9/5 dari 3.200+ Wisatawan Puas
             </span>
             <span className="hidden h-3 w-px bg-ivory-50/30 sm:inline-block" />
             <span className="inline-flex items-center gap-1.5 text-xs font-medium text-ivory-50">
               <ShieldCheck className="h-3.5 w-3.5 text-sage-200" aria-hidden="true" />
-              100% Berizin Resmi (Data Demo)
+              100% Berizin Resmi
             </span>
           </div>
 
