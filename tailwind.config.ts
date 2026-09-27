@@ -34,11 +34,12 @@ const config: Config = {
           400: "#D4BB87",
         },
         terracotta: {
-          400: "#D8896B",
-          500: "#C46F4E",
+          400: "#D98560",
+          500: "#C9653F",
           600: "#A85838",
         },
         charcoal: {
+          600: "#4A4A47",
           700: "#3A3A38",
           800: "#2A2A28",
           900: "#1C1C1A",
@@ -53,9 +54,13 @@ const config: Config = {
         "3xl": "1.5rem",
       },
       boxShadow: {
-        soft: "0 4px 20px -8px rgba(15, 36, 24, 0.08)",
-        card: "0 8px 32px -12px rgba(15, 36, 24, 0.12)",
-        lift: "0 20px 40px -16px rgba(15, 36, 24, 0.18)",
+        soft: "0 2px 8px -2px rgba(15, 36, 24, 0.06)",
+        card: "0 12px 32px -12px rgba(15, 36, 24, 0.14)",
+        lift: "0 24px 48px -16px rgba(15, 36, 24, 0.20)",
+      },
+      transitionTimingFunction: {
+        "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)",
       },
       keyframes: {
         "fade-up": {

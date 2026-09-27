@@ -9,12 +9,11 @@ import { buildGeneralConsultationUrl } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { label: "Beranda", href: "#beranda" },
   { label: "Paket Wisata", href: "#paket" },
-  { label: "Tentang Kami", href: "#tentang" },
+  { label: "Tentang", href: "#tentang" },
   { label: "Galeri", href: "#galeri" },
+  { label: "Testimoni", href: "#testimoni" },
   { label: "FAQ", href: "#faq" },
-  { label: "Kontak", href: "#kontak" },
 ] as const;
 
 export function Header() {
@@ -29,11 +28,7 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -49,28 +44,29 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
           isScrolled
-            ? "bg-ivory-50/95 shadow-soft backdrop-blur-md"
-            : "bg-transparent"
+            ? "bg-ivory-50/85 py-3 shadow-[0_1px_0_rgba(35,74,49,0.06),0_8px_32px_-16px_rgba(15,36,24,0.12)] backdrop-blur-xl backdrop-saturate-150"
+            : "bg-transparent py-5"
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <a
             href="#beranda"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick("#beranda");
             }}
-            className="flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 rounded-md"
-            aria-label={`${COMPANY.shortName} - Kembali ke beranda`}
+            className="flex flex-col gap-1 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+            aria-label={`${COMPANY.shortName} - Beranda`}
           >
-            <span className="font-display text-xl font-semibold leading-none text-forest-900 sm:text-2xl">
-              Jelajah<span className="text-terracotta-500">Nusantara</span>
+            <span className="font-display text-xl font-semibold leading-none tracking-[-0.02em] text-forest-900 sm:text-2xl">
+              Jelajah
+              <span className="text-terracotta-500">Nusantara</span>
             </span>
-            <span className="mt-1 hidden items-center gap-1 text-[10px] font-medium uppercase tracking-wider text-forest-700/70 sm:inline-flex">
+            <span className="hidden items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-forest-700/70 sm:inline-flex">
               <ShieldCheck className="h-3 w-3" aria-hidden="true" />
-              Terpercaya sejak 2025
+              Terpercaya sejak 2019
             </span>
           </a>
 
@@ -83,7 +79,7 @@ export function Header() {
                 key={item.href}
                 type="button"
                 onClick={() => handleNavClick(item.href)}
-                className="rounded-lg px-3.5 py-2 text-sm font-medium text-forest-800/80 transition hover:bg-forest-50 hover:text-forest-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+                className="rounded-lg px-3.5 py-2 text-sm font-medium text-forest-800/85 transition-colors hover:bg-forest-50 hover:text-forest-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
               >
                 {item.label}
               </button>
@@ -97,7 +93,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="hidden sm:inline-flex"
             >
-              <Button variant="whatsapp" size="sm">
+              <Button variant="primary" size="sm" className="rounded-full bg-forest-900 text-ivory-50 hover:bg-forest-700">
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 Konsultasi Gratis
               </Button>

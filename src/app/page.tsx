@@ -54,28 +54,22 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <Hero
-          activeCategory={activeCategory}
-          activeDestination={activeDestination}
-          onCategoryChange={setActiveCategory}
-          onDestinationChange={setActiveDestination}
-          onScrollToPackages={handleScrollToPackages}
-        />
-
+        <Hero onScrollToPackages={handleScrollToPackages} />
         <section
           id="paket"
           ref={packagesRef}
-          className="scroll-mt-24 py-16 sm:py-24"
+          className="scroll-mt-24 py-20 sm:py-28 lg:py-32"
           aria-labelledby="packages-heading"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
+              number="01"
               eyebrow="Paket Wisata"
-              title="Paket Wisata Pilihan"
-              description="Kurasi perjalanan terbaik ke destinasi unggulan Indonesia. Semua paket sudah termasuk itinerary, guide, dan dokumentasi."
+              title="Perjalanan yang Dirancang dengan Hati"
+              description="Kurasi perjalanan terbaik ke destinasi unggulan Indonesia. Setiap itinerary disusun dengan detail, ditemani guide lokal berpengalaman, dan dokumentasi profesional."
             />
 
-            <div className="mt-10">
+            <div className="mt-14">
               <PackageFilters
                 activeCategory={activeCategory}
                 activeDestination={activeDestination}
@@ -92,7 +86,7 @@ export default function HomePage() {
         </section>
 
         <TrustSection />
-        <Gallery />
+        <Gallery/>
         <Testimonials />
         <FAQ />
       </main>

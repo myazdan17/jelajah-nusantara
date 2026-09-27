@@ -39,13 +39,20 @@ export function FilterBar({
   onDestinationChange,
 }: FilterBarProps) {
   return (
-    <div className="w-full rounded-2xl border border-forest-700/10 bg-ivory-50/95 p-4 shadow-card backdrop-blur sm:p-5">
-      <div className="flex flex-col gap-4">
-        <div>
-          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-forest-700/70">
-            Tipe Perjalanan
-          </p>
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter tipe perjalanan">
+    <div className="w-full rounded-3xl border border-forest-700/8 bg-ivory-50 p-5 shadow-soft backdrop-blur sm:p-6">
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <span
+            id="filter-tipe-label"
+            className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.15em] text-forest-700/70 sm:min-w-[7rem]"
+          >
+            Tipe
+          </span>
+          <div
+            role="group"
+            aria-labelledby="filter-tipe-label"
+            className="flex flex-wrap gap-2"
+          >
             {CATEGORIES.map((cat) => {
               const active = activeCategory === cat;
               return (
@@ -55,10 +62,10 @@ export function FilterBar({
                   onClick={() => onCategoryChange(cat)}
                   aria-pressed={active}
                   className={cn(
-                    "rounded-full border px-3.5 py-1.5 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600",
+                    "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600",
                     active
                       ? "border-forest-700 bg-forest-700 text-ivory-50"
-                      : "border-forest-700/15 bg-ivory-100 text-forest-800 hover:border-forest-700/40"
+                      : "border-forest-700/15 bg-ivory-100 text-forest-800 hover:-translate-y-px hover:border-forest-700/40"
                   )}
                 >
                   {cat}
@@ -68,13 +75,20 @@ export function FilterBar({
           </div>
         </div>
 
-        <div className="h-px w-full bg-forest-700/10" />
+        <div className="h-px w-full bg-forest-700/8" />
 
-        <div>
-          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-forest-700/70">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <span
+            id="filter-dest-label"
+            className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.15em] text-forest-700/70 sm:min-w-[7rem]"
+          >
             Destinasi
-          </p>
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter destinasi">
+          </span>
+          <div
+            role="group"
+            aria-labelledby="filter-dest-label"
+            className="flex flex-wrap gap-2"
+          >
             {DESTINATIONS.map((dest) => {
               const active = activeDestination === dest;
               return (
@@ -84,10 +98,10 @@ export function FilterBar({
                   onClick={() => onDestinationChange(dest)}
                   aria-pressed={active}
                   className={cn(
-                    "rounded-full border px-3.5 py-1.5 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600",
+                    "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500",
                     active
                       ? "border-terracotta-500 bg-terracotta-500 text-ivory-50"
-                      : "border-forest-700/15 bg-ivory-100 text-forest-800 hover:border-terracotta-400/50"
+                      : "border-forest-700/15 bg-ivory-100 text-forest-800 hover:-translate-y-px hover:border-terracotta-400/50"
                   )}
                 >
                   {dest}

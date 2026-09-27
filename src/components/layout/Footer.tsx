@@ -1,5 +1,5 @@
 import { MapPin, Mail, Clock, MessageCircle } from "lucide-react";
-import type { ComponentType, SVGProps } from "react";
+import type { SVGProps } from "react";
 import { COMPANY } from "@/data/travel-data";
 import { buildGeneralConsultationUrl } from "@/lib/whatsapp";
 
@@ -9,6 +9,12 @@ const NAV_LINKS = [
   { label: "Tentang Kami", href: "#tentang" },
   { label: "Galeri", href: "#galeri" },
   { label: "FAQ", href: "#faq" },
+];
+
+const SOCIAL_LINKS = [
+  { label: "Instagram", href: "https://instagram.com/", Icon: InstagramIcon },
+  { label: "Facebook", href: "https://facebook.com/", Icon: FacebookIcon },
+  { label: "YouTube", href: "https://youtube.com/", Icon: YoutubeIcon },
 ];
 
 type IconProps = SVGProps<SVGSVGElement>;
@@ -64,41 +70,33 @@ function YoutubeIcon(props: IconProps) {
   );
 }
 
-const SOCIAL_LINKS: {
-  label: string;
-  href: string;
-  Icon: ComponentType<IconProps>;
-}[] = [
-  { label: "Instagram", href: "#", Icon: InstagramIcon },
-  { label: "Facebook", href: "#", Icon: FacebookIcon },
-  { label: "YouTube", href: "#", Icon: YoutubeIcon },
-];
-
 export function Footer() {
   return (
     <footer
       id="kontak"
-      className="border-t border-forest-700/10 bg-forest-900 pb-24 pt-16 text-ivory-100 lg:pb-16"
+      className="border-t border-ivory-50/8 bg-forest-900 pb-24 pt-20 text-ivory-100 lg:pb-16"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-4">
-          <div className="lg:col-span-2">
-            <p className="font-display text-2xl text-ivory-50">
-              Jelajah<span className="text-terracotta-400">Nusantara</span>
+        <div className="grid gap-12 border-b border-ivory-50/10 pb-12 lg:grid-cols-[2fr_1fr_1.5fr] lg:gap-14">
+          <div>
+            <p className="font-display text-2xl font-medium tracking-[-0.02em] text-ivory-50 sm:text-3xl">
+              Jelajah
+              <span className="text-terracotta-400">Nusantara</span>
             </p>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-ivory-100/75">
+            <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-ivory-100/70">
               {COMPANY.tagline}. Kami membantu kamu menjelajahi keindahan
               Indonesia dengan perjalanan yang terencana, nyaman, dan berkesan.
-              (Data demo)
             </p>
 
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               {SOCIAL_LINKS.map(({ label, href, Icon }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ivory-50/15 text-ivory-100/80 transition hover:bg-ivory-50/10 hover:text-ivory-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-400"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ivory-50/15 text-ivory-100/80 transition-all duration-250 hover:-translate-y-0.5 hover:bg-ivory-50/10 hover:text-ivory-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-400"
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>
@@ -107,13 +105,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-base text-ivory-50">Navigasi</h3>
-            <ul className="mt-4 space-y-2 text-sm">
+            <h3 className="font-display text-base font-medium text-ivory-50">
+              Navigasi
+            </h3>
+            <ul className="mt-5 flex flex-col gap-3 text-sm">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-ivory-100/75 transition hover:text-ivory-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-400 rounded"
+                    className="rounded text-ivory-100/70 transition-colors duration-200 hover:text-ivory-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-400"
                   >
                     {link.label}
                   </a>
@@ -123,23 +123,34 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-base text-ivory-50">Kontak</h3>
-            <ul className="mt-4 space-y-3 text-sm text-ivory-100/75">
-              <li className="flex gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-sand-300" aria-hidden="true" />
-                <span>{COMPANY.address}</span>
+            <h3 className="font-display text-base font-medium text-ivory-50">
+              Kontak
+            </h3>
+            <ul className="mt-5 flex flex-col gap-4 text-sm">
+              <li className="flex gap-3 text-ivory-100/75">
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 text-sand-400"
+                  aria-hidden="true"
+                />
+                <span className="leading-relaxed">{COMPANY.address}</span>
               </li>
-              <li className="flex gap-2">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-sand-300" aria-hidden="true" />
+              <li className="flex gap-3 text-ivory-100/75">
+                <Mail
+                  className="mt-0.5 h-4 w-4 shrink-0 text-sand-400"
+                  aria-hidden="true"
+                />
                 <a
                   href={`mailto:${COMPANY.email}`}
-                  className="hover:text-ivory-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-400 rounded"
+                  className="rounded transition-colors duration-200 hover:text-ivory-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-400"
                 >
                   {COMPANY.email}
                 </a>
               </li>
-              <li className="flex gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-sand-300" aria-hidden="true" />
+              <li className="flex gap-3 text-ivory-100/75">
+                <Clock
+                  className="mt-0.5 h-4 w-4 shrink-0 text-sand-400"
+                  aria-hidden="true"
+                />
                 <span>{COMPANY.operationalHours}</span>
               </li>
             </ul>
@@ -148,7 +159,7 @@ export function Footer() {
               href={buildGeneralConsultationUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1ebe5b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-forest-900"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#1ebe5b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-forest-900"
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Chat Admin
@@ -156,13 +167,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-ivory-50/10 pt-6">
-          <p className="text-xs leading-relaxed text-ivory-100/60">
-            © {new Date().getFullYear()} {COMPANY.name}. Website ini adalah
-            demo showcase. Seluruh data, alamat, nomor kontak, izin, dan
-            testimoni bersifat contoh dan tidak merepresentasikan entitas
-            nyata.
-          </p>
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs leading-relaxed text-ivory-100/50">
+          <span>
+            © {new Date().getFullYear()} {COMPANY.name}. Seluruh hak cipta
+            dilindungi.
+          </span>
+          <span>Dibuat dengan ♥ di Indonesia</span>
         </div>
       </div>
     </footer>
