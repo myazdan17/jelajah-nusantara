@@ -21,7 +21,7 @@ const HERO_STATS = [
     label: "Rating Rata-rata",
     value: "4.9",
     suffix: "/ 5.0",
-    sub: "Dari 1.200+ ulasan",
+    sub: "Dari 250+ ulasan",
   },
   {
     label: "Destinasi Aktif",
