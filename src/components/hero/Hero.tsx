@@ -53,11 +53,12 @@ export function Hero({ onScrollToPackages }: HeroProps) {
   return (
     <section
       id="beranda"
-      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-36 lg:pb-20"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-20"
       onPointerMove={handlePointerMove}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
     >
+      {/* Background */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1920&q=80"
@@ -71,13 +72,13 @@ export function Hero({ onScrollToPackages }: HeroProps) {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 80% at 20% 40%, rgba(15,36,24,0.55) 0%, transparent 60%), linear-gradient(180deg, rgba(15,36,24,0.55) 0%, rgba(15,36,24,0.35) 45%, rgba(15,36,24,0.92) 100%)",
+              "radial-gradient(120% 80% at 20% 40%, rgba(15,36,24,0.6) 0%, transparent 60%), linear-gradient(180deg, rgba(15,36,24,0.6) 0%, rgba(15,36,24,0.4) 45%, rgba(15,36,24,0.95) 100%)",
           }}
         />
         <div
           ref={glowRef}
           aria-hidden="true"
-          className="pointer-events-none absolute left-0 top-0 h-[520px] w-[520px] rounded-full opacity-0 mix-blend-screen transition-opacity duration-500"
+          className="pointer-events-none absolute left-0 top-0 hidden h-[520px] w-[520px] rounded-full opacity-0 mix-blend-screen transition-opacity duration-500 lg:block"
           style={{
             background:
               "radial-gradient(circle, rgba(201,101,63,0.30) 0%, transparent 65%)",
@@ -86,38 +87,44 @@ export function Hero({ onScrollToPackages }: HeroProps) {
         />
       </div>
 
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-14">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-14">
+          {/* Content */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl"
           >
-            <div className="mb-7 inline-flex flex-wrap items-center gap-3 rounded-full border border-ivory-50/20 bg-ivory-50/10 px-4 py-2 backdrop-blur-xl">
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-ivory-50">
+            {/* Badge */}
+            <div className="mb-6 inline-flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-full border border-ivory-50/20 bg-ivory-50/10 px-3.5 py-2 backdrop-blur-xl sm:px-4">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-ivory-50 sm:text-xs">
                 <Star
-                  className="h-3.5 w-3.5 fill-sand-400 text-sand-400"
+                  className="h-3 w-3 fill-sand-400 text-sand-400 sm:h-3.5 sm:w-3.5"
                   aria-hidden="true"
                 />
-                4.9/5 dari 3.200+ Wisatawan
+                4.9/5 dari 250+ Wisatawan
               </span>
               <span
                 className="hidden h-3 w-px bg-ivory-50/25 sm:inline-block"
                 aria-hidden="true"
               />
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-ivory-50">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-ivory-50 sm:text-xs">
                 <ShieldCheck
-                  className="h-3.5 w-3.5 text-sand-200"
+                  className="h-3 w-3 text-sand-200 sm:h-3.5 sm:w-3.5"
                   aria-hidden="true"
                 />
                 100% Berizin Resmi
               </span>
             </div>
 
+            {/* Headline — fluid clamp */}
             <h1
-              className="font-display font-normal leading-[1.02] tracking-[-0.025em] text-ivory-50 text-[clamp(2.25rem,5.5vw,4.5rem)]"
-              style={{ textWrap: "balance" }}
+              className="font-display font-normal leading-[1.05] tracking-[-0.025em] text-ivory-50"
+              style={{
+                fontSize: "clamp(2rem, 8vw, 4.5rem)",
+                textWrap: "balance",
+              }}
             >
               Jelajahi Keindahan Indonesia{" "}
               <span className="font-medium italic text-sand-200">
@@ -125,20 +132,22 @@ export function Hero({ onScrollToPackages }: HeroProps) {
               </span>
             </h1>
 
+            {/* Description */}
             <p
-              className="mt-6 max-w-xl text-[clamp(1rem,1.2vw,1.125rem)] leading-[1.7] text-ivory-100/90"
+              className="mt-5 max-w-xl text-[15px] leading-[1.65] text-ivory-100/90 sm:mt-6 sm:text-base lg:text-lg"
               style={{ textWrap: "pretty" }}
             >
-              Dari sailing Phinisi di Labuan Bajo hingga sunrise magis Bromo —
-              itinerary, transport, akomodasi, dan dokumentasi sudah kami
+              Dari sailing Phinisi di Labuan Bajo hingga sunrise magis Bromo.
+              Itinerary, transport, akomodasi, dan dokumentasi sudah kami
               siapkan. Kamu cukup datang dan menikmati perjalanan.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            {/* CTA Buttons */}
+            <div className="mt-7 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:items-center sm:gap-3">
               <button
                 type="button"
                 onClick={onScrollToPackages}
-                className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-ivory-50 px-7 text-sm font-semibold text-forest-900 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:bg-ivory-100 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-forest-900 sm:text-base"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ivory-50 px-6 text-sm font-semibold text-forest-900 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:bg-ivory-100 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-forest-900 sm:h-13 sm:text-base"
               >
                 Lihat Paket Wisata
                 <ArrowRight
@@ -151,22 +160,48 @@ export function Hero({ onScrollToPackages }: HeroProps) {
                 href={buildGeneralConsultationUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-to-br from-[#2ce06e] to-[#1ebe5b] px-7 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(37,211,102,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_-8px_rgba(37,211,102,0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-forest-900 sm:text-base"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-br from-[#2ce06e] to-[#1ebe5b] px-6 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(37,211,102,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_-8px_rgba(37,211,102,0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-forest-900 sm:h-13 sm:text-base"
               >
-                <span className="relative flex h-5 w-5 items-center justify-center">
+                <span className="relative flex h-4 w-4 items-center justify-center sm:h-5 sm:w-5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-30" />
                   <MessageCircle
-                    className="relative h-5 w-5"
+                    className="relative h-4 w-4 sm:h-5 sm:w-5"
                     aria-hidden="true"
                   />
                 </span>
                 Konsultasi Gratis
               </a>
             </div>
+
+            {/* Mobile Stats — Compact horizontal scroll */}
+            <div className="mt-7 lg:hidden">
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-sand-400">
+                Dipercaya Wisatawan
+              </p>
+              <div className="flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {HERO_STATS.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="shrink-0 rounded-xl border border-ivory-50/15 bg-ivory-50/10 px-3.5 py-2.5 backdrop-blur-xl"
+                  >
+                    <p className="font-display text-base font-medium leading-none text-ivory-50">
+                      {stat.value}
+                      <span className="ml-1 text-[11px] font-normal text-ivory-50/70">
+                        {stat.suffix}
+                      </span>
+                    </p>
+                    <p className="mt-1 text-[10px] leading-tight text-ivory-100/65">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
+          {/* Desktop Stats — Full vertical cards */}
           <motion.aside
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             aria-label="Statistik perusahaan"
@@ -175,7 +210,7 @@ export function Hero({ onScrollToPackages }: HeroProps) {
             {HERO_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-2xl border border-ivory-50/15 bg-ivory-50/10 p-5 backdrop-blur-xl transition-all duration-400 hover:-translate-y-0.5 hover:border-ivory-50/25 hover:bg-ivory-50/15"
+                className="rounded-2xl border border-ivory-50/15 bg-ivory-50/10 p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-ivory-50/25 hover:bg-ivory-50/15"
               >
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sand-400">
                   {stat.label}

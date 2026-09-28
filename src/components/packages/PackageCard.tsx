@@ -97,7 +97,7 @@ export function PackageCard({
       </div>
 
       {/* Body */}
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
         <h3 className="font-display text-xl font-medium leading-tight tracking-[-0.01em] text-forest-900">
           {pkg.name}
         </h3>

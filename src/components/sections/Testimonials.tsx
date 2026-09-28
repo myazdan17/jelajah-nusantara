@@ -9,7 +9,7 @@ export function Testimonials() {
   return (
     <section
       id="testimoni"
-      className="bg-forest-900 py-20 text-ivory-100 sm:py-28 lg:py-32"
+      className="bg-forest-900 py-16 text-ivory-100 sm:py-24 lg:py-32"
       aria-labelledby="testimonials-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -30,20 +30,19 @@ export function Testimonials() {
           >
             Cerita dari{" "}
             <span className="font-medium italic text-terracotta-400">
-              Wisatawan Kami
+              Mereka yang Sudah Trip
             </span>
           </h2>
           <p className="mt-6 max-w-2xl text-[clamp(1rem,1.2vw,1.0625rem)] leading-[1.75] text-ivory-100/75">
-            Cerita nyata dari para wisatawan yang telah mempercayakan
-            perjalanannya kepada kami.
+            Beberapa cerita yang mereka bagikan setelah pulang dari perjalanan.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {TESTIMONIALS.map((t, idx) => (
             <motion.figure
               key={t.id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{
@@ -51,7 +50,7 @@ export function Testimonials() {
                 delay: idx * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="flex h-full flex-col rounded-3xl border border-ivory-50/8 bg-forest-800/60 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-ivory-50/16 hover:bg-forest-800/80"
+              className="flex h-full flex-col rounded-3xl border border-ivory-50/8 bg-forest-800/60 p-5 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-ivory-50/16 hover:bg-forest-800/80 sm:p-6"
             >
               <div
                 className="flex gap-0.5"
@@ -71,7 +70,7 @@ export function Testimonials() {
                 ))}
               </div>
 
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ivory-100/90">
+              <blockquote className="mt-4 flex-1 text-[13px] leading-relaxed text-ivory-100/90 sm:text-sm">
                 &ldquo;{t.experience}&rdquo;
               </blockquote>
 
@@ -90,7 +89,7 @@ export function Testimonials() {
                     {t.name}
                   </p>
                   <p className="truncate text-xs text-ivory-100/65">
-                    {t.city} — {t.packageName}
+                    {t.city}, {t.packageName}
                   </p>
                 </div>
               </figcaption>

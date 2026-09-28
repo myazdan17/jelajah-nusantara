@@ -11,12 +11,6 @@ const NAV_LINKS = [
   { label: "FAQ", href: "#faq" },
 ];
 
-const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://instagram.com/", Icon: InstagramIcon },
-  { label: "Facebook", href: "https://facebook.com/", Icon: FacebookIcon },
-  { label: "YouTube", href: "https://youtube.com/", Icon: YoutubeIcon },
-];
-
 type IconProps = SVGProps<SVGSVGElement>;
 
 function InstagramIcon(props: IconProps) {
@@ -70,22 +64,29 @@ function YoutubeIcon(props: IconProps) {
   );
 }
 
+const SOCIAL_LINKS = [
+  { label: "Instagram", href: "https://instagram.com/", Icon: InstagramIcon },
+  { label: "Facebook", href: "https://facebook.com/", Icon: FacebookIcon },
+  { label: "YouTube", href: "https://youtube.com/", Icon: YoutubeIcon },
+];
+
 export function Footer() {
   return (
     <footer
       id="kontak"
-      className="border-t border-ivory-50/8 bg-forest-900 pb-24 pt-20 text-ivory-100 lg:pb-16"
+      className="border-t border-ivory-50/8 bg-forest-900 pb-24 pt-16 text-ivory-100 sm:pt-20 lg:pb-16"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 border-b border-ivory-50/10 pb-12 lg:grid-cols-[2fr_1fr_1.5fr] lg:gap-14">
+        <div className="grid gap-10 border-b border-ivory-50/10 pb-12 lg:grid-cols-[2fr_1fr_1.5fr] lg:gap-14">
           <div>
             <p className="font-display text-2xl font-medium tracking-[-0.02em] text-ivory-50 sm:text-3xl">
               Jelajah
               <span className="text-terracotta-400">Nusantara</span>
             </p>
             <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-ivory-100/70">
-              {COMPANY.tagline}. Kami membantu kamu menjelajahi keindahan
-              Indonesia dengan perjalanan yang terencana, nyaman, dan berkesan.
+              Kami merancang perjalanan wisata Indonesia dengan rencana yang
+              matang, guide berpengalaman, dan pelayanan yang bisa kamu
+              andalkan.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -169,10 +170,10 @@ export function Footer() {
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs leading-relaxed text-ivory-100/50">
           <span>
-            © {new Date().getFullYear()} {COMPANY.name}. Seluruh hak cipta
+            &copy; {new Date().getFullYear()} {COMPANY.name}. Seluruh hak cipta
             dilindungi.
           </span>
-          <span>Dibuat dengan ♥ di Indonesia</span>
+          <span>Dibuat dengan teliti di Indonesia</span>
         </div>
       </div>
     </footer>

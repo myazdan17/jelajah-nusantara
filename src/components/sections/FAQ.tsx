@@ -17,11 +17,11 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-20 sm:py-28 lg:py-32"
+      className="py-16 sm:py-24 lg:py-32"
       aria-labelledby="faq-heading"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
           <div className="mb-6 flex items-center justify-center gap-3">
             <span className="font-display text-xs font-medium tracking-[0.15em] text-sand-400">
               05
@@ -42,8 +42,8 @@ export function FAQ() {
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[clamp(1rem,1.2vw,1.0625rem)] leading-[1.75] text-charcoal-700/80">
-            Jawaban singkat untuk pertanyaan umum seputar booking dan
-            perjalanan.
+            Beberapa hal yang paling sering ditanyakan calon wisatawan. Kalau
+            masih ada yang bingung, langsung chat admin kami saja.
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export function FAQ() {
               <div
                 key={item.id}
                 className={cn(
-                  "mb-3 overflow-hidden rounded-3xl border transition-colors duration-300",
+                  "mb-2.5 overflow-hidden rounded-2xl border transition-colors duration-300 sm:mb-3 sm:rounded-3xl",
                   isOpen
                     ? "border-forest-700/30 bg-forest-50/60"
                     : "border-forest-700/10 bg-ivory-50"
@@ -69,9 +69,9 @@ export function FAQ() {
                     onClick={() => toggle(item.id)}
                     aria-expanded={isOpen}
                     aria-controls={panelId}
-                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-200 hover:bg-forest-700/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+                    className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left transition-colors duration-200 hover:bg-forest-700/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 sm:px-6 sm:py-5"
                   >
-                    <span className="font-display text-base font-medium text-forest-900 sm:text-lg">
+                    <span className="font-display text-[14px] font-medium leading-snug text-forest-900 sm:text-base md:text-lg">
                       {item.question}
                     </span>
                     <Plus
@@ -93,7 +93,7 @@ export function FAQ() {
                   }}
                 >
                   <div className="overflow-hidden">
-                    <p className="border-t border-forest-700/10 px-6 pb-5 pt-5 text-sm leading-relaxed text-charcoal-700/85">
+                    <p className="border-t border-forest-700/10 px-4 pb-4 pt-4 text-[13px] leading-relaxed text-charcoal-700/85 sm:px-6 sm:pb-5 sm:pt-5 sm:text-sm">
                       {item.answer}
                     </p>
                   </div>

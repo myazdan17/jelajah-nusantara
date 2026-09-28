@@ -17,11 +17,11 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "JelajahNusantara Tour & Travel — Wisata Indonesia Tanpa Ribet",
+    default: "JelajahNusantara Tour & Travel",
     template: "%s | JelajahNusantara Tour & Travel",
   },
   description:
-    "Biro perjalanan wisata Indonesia untuk open trip, private trip, family, dan honeymoon. Jelajahi Labuan Bajo, Bromo, Bali, Raja Ampat, Derawan, dan Dieng dengan mudah. (Demo)",
+    "Biro perjalanan wisata Indonesia untuk open trip, private trip, family, dan honeymoon. Menyediakan paket ke Labuan Bajo, Bromo, Bali, Raja Ampat, Derawan, Dieng, dan destinasi lainnya.",
   keywords: [
     "paket wisata Indonesia",
     "open trip",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    title: "JelajahNusantara Tour & Travel — Wisata Indonesia Tanpa Ribet",
+    title: "JelajahNusantara Tour & Travel",
     description:
-      "Paket wisata premium ke destinasi terbaik Indonesia. Itinerary lengkap, guide lokal, dokumentasi, dan booking mudah via WhatsApp. (Demo)",
+      "Paket wisata premium ke destinasi terbaik Indonesia. Itinerary lengkap, guide lokal, dokumentasi, dan booking mudah via WhatsApp.",
     siteName: "JelajahNusantara Tour & Travel",
   },
   robots: { index: true, follow: true },

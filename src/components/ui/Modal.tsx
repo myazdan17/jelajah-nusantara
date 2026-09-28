@@ -15,9 +15,9 @@ interface ModalProps {
 }
 
 const sizeClasses = {
-  md: "max-w-xl",
-  lg: "max-w-3xl",
-  xl: "max-w-5xl",
+  md: "sm:max-w-xl",
+  lg: "sm:max-w-3xl",
+  xl: "sm:max-w-5xl",
 } as const;
 
 export function Modal({
@@ -62,7 +62,7 @@ export function Modal({
     <AnimatePresence>
       {isOpen ? (
         <div
-          className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center"
+          className="fixed inset-0 z-[100] flex items-stretch justify-center sm:items-center sm:p-4"
           role="dialog"
           aria-modal="true"
           aria-label={title ?? "Detail Paket"}
@@ -70,7 +70,7 @@ export function Modal({
           <motion.button
             type="button"
             aria-label="Tutup modal"
-            className="absolute inset-0 h-full w-full cursor-default bg-forest-900/60 backdrop-blur-sm"
+            className="absolute inset-0 h-full w-full cursor-default bg-forest-900/70 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -85,7 +85,9 @@ export function Modal({
             exit={{ opacity: 0, y: 40, scale: 0.98 }}
             transition={{ type: "spring", damping: 26, stiffness: 280 }}
             className={cn(
-              "relative z-10 flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-3xl bg-ivory-50 shadow-lift sm:max-h-[88vh] sm:rounded-3xl",
+              "relative z-10 flex w-full flex-col overflow-hidden bg-ivory-50",
+              "h-full sm:h-auto sm:max-h-[90vh] sm:rounded-3xl",
+              "shadow-lift",
               sizeClasses[size],
               className
             )}
@@ -95,12 +97,18 @@ export function Modal({
               type="button"
               onClick={onClose}
               aria-label="Tutup detail paket"
-              className="absolute right-3 top-3 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-ivory-50/90 text-forest-900 shadow-soft transition hover:bg-ivory-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+              className={cn(
+                "absolute right-3 top-3 z-30 inline-flex h-10 w-10 items-center justify-center rounded-full",
+                "bg-ivory-50/95 text-forest-900 shadow-soft backdrop-blur",
+                "transition hover:bg-ivory-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+              )}
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
 
-            <div className="flex-1 overflow-y-auto overscroll-contain">{children}</div>
+            <div className="flex-1 overflow-y-auto overscroll-contain">
+              {children}
+            </div>
           </motion.div>
         </div>
       ) : null}

@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, MessageCircle, ShieldCheck } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { COMPANY } from "@/data/travel-data";
 import { buildGeneralConsultationUrl } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
@@ -44,32 +42,33 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+          "fixed inset-x-0 top-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-ivory-50/85 py-3 shadow-[0_1px_0_rgba(35,74,49,0.06),0_8px_32px_-16px_rgba(15,36,24,0.12)] backdrop-blur-xl backdrop-saturate-150"
-            : "bg-transparent py-5"
+            ? "bg-ivory-50/95 py-2.5 shadow-[0_1px_0_rgba(35,74,49,0.06),0_8px_32px_-16px_rgba(15,36,24,0.12)] backdrop-blur-xl"
+            : "bg-transparent py-4 sm:py-5"
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+          {/* Logo */}
           <a
             href="#beranda"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick("#beranda");
             }}
-            className="flex flex-col gap-1 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
-            aria-label={`${COMPANY.shortName} - Beranda`}
+            className="flex min-w-0 flex-col gap-0.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+            aria-label="JelajahNusantara beranda"
           >
-            <span className="font-display text-xl font-semibold leading-none tracking-[-0.02em] text-forest-900 sm:text-2xl">
-              Jelajah
-              <span className="text-terracotta-500">Nusantara</span>
+            <span className="font-display text-lg font-semibold leading-none tracking-[-0.02em] text-forest-900 sm:text-xl md:text-2xl">
+              Jelajah<span className="text-terracotta-500">Nusantara</span>
             </span>
-            <span className="hidden items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-forest-700/70 sm:inline-flex">
+            <span className="hidden items-center gap-1 text-[10px] font-medium uppercase tracking-[0.12em] text-forest-700/70 sm:inline-flex">
               <ShieldCheck className="h-3 w-3" aria-hidden="true" />
               Terpercaya sejak 2019
             </span>
           </a>
 
+          {/* Desktop Nav */}
           <nav
             aria-label="Navigasi utama"
             className="hidden items-center gap-1 lg:flex"
@@ -79,24 +78,23 @@ export function Header() {
                 key={item.href}
                 type="button"
                 onClick={() => handleNavClick(item.href)}
-                className="rounded-lg px-3.5 py-2 text-sm font-medium text-forest-800/85 transition-colors hover:bg-forest-50 hover:text-forest-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-forest-800/85 transition-colors hover:bg-forest-50 hover:text-forest-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
               >
                 {item.label}
               </button>
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          {/* Right Actions */}
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href={buildGeneralConsultationUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full bg-forest-900 px-4 py-2 text-xs font-semibold text-ivory-50 transition-colors hover:bg-forest-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 focus-visible:ring-offset-2 md:inline-flex"
             >
-              <Button variant="primary" size="sm" className="rounded-full bg-forest-900 text-ivory-50 hover:bg-forest-700">
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                Konsultasi Gratis
-              </Button>
+              <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+              Konsultasi Gratis
             </a>
 
             <button
@@ -105,7 +103,7 @@ export function Header() {
               aria-label={isMenuOpen ? "Tutup menu" : "Buka menu"}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-navigation"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-forest-700/20 bg-ivory-50/80 text-forest-900 transition hover:bg-ivory-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-forest-700/15 bg-ivory-50/90 text-forest-900 transition hover:bg-ivory-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 lg:hidden"
             >
               {isMenuOpen ? (
                 <X className="h-5 w-5" aria-hidden="true" />
@@ -117,6 +115,7 @@ export function Header() {
         </div>
       </header>
 
+      {/* Mobile Menu — full screen */}
       <AnimatePresence>
         {isMenuOpen ? (
           <motion.div
@@ -125,55 +124,65 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-forest-900/40 backdrop-blur-sm lg:hidden"
-            onClick={() => setIsMenuOpen(false)}
+            className="fixed inset-0 z-[60] bg-ivory-50 lg:hidden"
           >
-            <motion.nav
-              aria-label="Navigasi mobile"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="absolute right-0 top-0 flex h-full w-[85%] max-w-sm flex-col bg-ivory-50 p-6 shadow-lift"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="mb-8 mt-2">
-                <p className="font-display text-2xl text-forest-900">
-                  Jelajah<span className="text-terracotta-500">Nusantara</span>
-                </p>
-                <p className="mt-1 text-xs uppercase tracking-wider text-forest-700/70">
-                  Menu Navigasi
-                </p>
+            <div className="flex h-full flex-col">
+              {/* Header menu */}
+              <div className="flex items-center justify-between border-b border-forest-700/10 px-4 py-4">
+                <div className="flex flex-col gap-0.5">
+                  <span className="font-display text-lg font-semibold leading-none tracking-[-0.02em] text-forest-900">
+                    Jelajah<span className="text-terracotta-500">Nusantara</span>
+                  </span>
+                  <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-forest-700/70">
+                    Menu Navigasi
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsMenuOpen(false)}
+                  aria-label="Tutup menu"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-forest-50 text-forest-900 transition hover:bg-forest-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+                >
+                  <X className="h-5 w-5" aria-hidden="true" />
+                </button>
               </div>
 
-              <ul className="flex flex-col gap-1">
-                {NAV_ITEMS.map((item) => (
-                  <li key={item.href}>
-                    <button
-                      type="button"
-                      onClick={() => handleNavClick(item.href)}
-                      className="w-full rounded-xl px-4 py-3 text-left text-base font-medium text-forest-800 transition hover:bg-forest-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+              {/* Nav items */}
+              <nav aria-label="Navigasi mobile" className="flex-1 overflow-y-auto px-4 py-6">
+                <ul className="flex flex-col gap-1">
+                  {NAV_ITEMS.map((item, idx) => (
+                    <motion.li
+                      key={item.href}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.05 + idx * 0.04 }}
                     >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick(item.href)}
+                        className="w-full rounded-xl px-4 py-4 text-left text-base font-medium text-forest-800 transition hover:bg-forest-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600"
+                      >
+                        {item.label}
+                      </button>
+                    </motion.li>
+                  ))}
+                </ul>
+              </nav>
 
-              <div className="mt-auto pt-6">
+              {/* Footer menu */}
+              <div className="border-t border-forest-700/10 p-4">
                 <a
                   href={buildGeneralConsultationUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block"
+                  className="flex h-13 items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#2ce06e] to-[#1ebe5b] text-sm font-semibold text-white shadow-soft transition hover:shadow-[0_8px_20px_-8px_rgba(37,211,102,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
+                  style={{ height: "3.25rem" }}
                 >
-                  <Button variant="whatsapp" size="lg" fullWidth>
-                    <MessageCircle className="h-5 w-5" aria-hidden="true" />
-                    Konsultasi Gratis
-                  </Button>
+                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                  Konsultasi Gratis
                 </a>
               </div>
-            </motion.nav>
+            </div>
           </motion.div>
         ) : null}
       </AnimatePresence>
