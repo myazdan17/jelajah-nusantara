@@ -173,24 +173,21 @@ export function Hero({ onScrollToPackages }: HeroProps) {
               </a>
             </div>
 
-            {/* Mobile Stats — Compact horizontal scroll */}
-            <div className="mt-7 lg:hidden">
-              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-sand-400">
+            {/* Mobile Stats */}
+            <div className="mt-6 lg:hidden">
+              <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-sand-400">
                 Dipercaya Wisatawan
               </p>
-              <div className="flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div className="grid grid-cols-3 gap-2">
                 {HERO_STATS.map((stat) => (
                   <div
                     key={stat.label}
-                    className="shrink-0 rounded-xl border border-ivory-50/15 bg-ivory-50/10 px-3.5 py-2.5 backdrop-blur-xl"
+                    className="rounded-xl border border-ivory-50/15 bg-ivory-50/10 px-2.5 py-2.5 backdrop-blur-xl"
                   >
                     <p className="font-display text-base font-medium leading-none text-ivory-50">
                       {stat.value}
-                      <span className="ml-1 text-[11px] font-normal text-ivory-50/70">
-                        {stat.suffix}
-                      </span>
                     </p>
-                    <p className="mt-1 text-[10px] leading-tight text-ivory-100/65">
+                    <p className="mt-0.5 text-[10px] leading-tight text-ivory-100/70">
                       {stat.label}
                     </p>
                   </div>
