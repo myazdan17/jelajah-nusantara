@@ -173,7 +173,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {COMPANY.name}. Seluruh hak cipta
             dilindungi.
           </span>
-          <span>Dibuat dengan teliti di Indonesia</span>
+          <span>Project by mybtr17</span>
         </div>
       </div>
     </footer>
